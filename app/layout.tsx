@@ -1,0 +1,4 @@
+import './globals.css';import {Cormorant_Garamond,Inter} from 'next/font/google';import {CartProvider} from '@/components/cart-context';import {Header} from '@/components/header';import {CartDrawer} from '@/components/cart-drawer';import {Footer} from '@/components/footer'
+const serif=Cormorant_Garamond({subsets:['latin'],variable:'--font-cormorant',weight:['400','500','600']});const sans=Inter({subsets:['latin'],variable:'--font-inter'})
+export const metadata={title:'D`LOVE — Heart & Mind',description:'Moda premium con propósito. El equilibrio entre el corazón y la mente.'}
+export default function Layout({children}:{children:React.ReactNode}){return <html lang="es"><body className={`${serif.variable} ${sans.variable} font-sans`}><CartProvider><Header/><CartDrawer/><main>{children}</main><Footer/></CartProvider><div className="noise fixed inset-0 z-[100] opacity-[.025]"/></body></html>}
